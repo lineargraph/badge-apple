@@ -15,6 +15,7 @@
       packages.${system} = {
         bad-apple-frames = pkgs.callPackage ./frames.nix { };
         badge-apple = pkgs.callPackage ./package.nix { };
+        default = self.packages.${system}.badge-apple;
       };
       devShells.${system}.default = pkgs.callPackage ./shell.nix { };
     };
